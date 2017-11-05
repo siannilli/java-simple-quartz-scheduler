@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+  	<java.version>1.7</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -50,4 +51,69 @@
   		</dependency>
   	</dependencies>
   </dependencyManagement>
+	<build>
+		<resources>
+	        <resource>
+	            <directory>src/resources</directory>
+	        </resource>
+	    </resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<!-- The maven app assembler plugin will generate a script that sets up 
+				the classpath and runs your project -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<configuration>
+					<!-- to enable external debugging on port 8000
+					<extraJvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000</extraJvmArguments-->
+					<assembleDirectory>target</assembleDirectory>
+					<programs>
+						<program>
+							<mainClass>JavaSample.Worker.App</mainClass>
+							<name>worker</name>
+						</program>
+					</programs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>execution1</id>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!--  for adding the generated sources to the class path -->
+			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>build-helper-maven-plugin</artifactId>
+			    <executions>
+			        <execution>
+			            <phase>generate-sources</phase>
+			            <goals>
+			                <goal>add-source</goal>
+			            </goals>
+			            <configuration>
+			                <sources>
+			                    <source>target/generated/cxf</source>
+			                </sources>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
+			
+		</plugins>
+	</build>
 </project>
