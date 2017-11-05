@@ -15,7 +15,7 @@ public class App
         System.out.println( "Start-up" );        
         try {
             // Grab the Scheduler instance from the Factory
-            Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
+            final Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
 
             // and start it off
             scheduler.start();            
