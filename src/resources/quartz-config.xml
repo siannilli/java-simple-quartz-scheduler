@@ -20,7 +20,7 @@
 				<name>TestJobSchedule</name>
 				<job-name>TestJob</job-name>
 				<job-group>ScheduledJobs</job-group>
-				<cron-expression>0/15 * * * * ?</cron-expression>
+				<cron-expression>0/10 * * * * ?</cron-expression>
 			</cron>
 		</trigger>
 	</schedule>
