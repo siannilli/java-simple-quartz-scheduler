@@ -1,4 +1,4 @@
-package JavaSample.Worker;
+package com.parx.sample.scheduler;
 
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;

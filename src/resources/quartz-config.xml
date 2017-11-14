@@ -12,7 +12,7 @@
 			<name>TestJob</name>
 			<group>ScheduledJobs</group>
 			<description>Print salutation at scheduled time</description>
-			<job-class>JavaSample.Worker.Jobs.TestJob</job-class>
+			<job-class>com.parx.sample.scheduler.jobs.TestJob</job-class>
 		</job>
  
 		<trigger>

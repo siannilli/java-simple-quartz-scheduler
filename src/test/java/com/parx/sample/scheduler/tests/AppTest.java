@@ -1,4 +1,4 @@
-package JavaSample.Worker;
+package com.parx.sample.scheduler.tests;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

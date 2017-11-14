@@ -1,4 +1,4 @@
-package JavaSample.Worker.Jobs;
+package com.parx.sample.scheduler.jobs;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
