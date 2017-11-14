@@ -79,7 +79,7 @@
 					<assembleDirectory>target</assembleDirectory>
 					<programs>
 						<program>
-							<mainClass>JavaSample.Worker.App</mainClass>
+							<mainClass>com.parx.sample.scheduler.App</mainClass>
 							<name>worker</name>
 						</program>
 					</programs>
